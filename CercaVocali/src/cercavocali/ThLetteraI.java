@@ -52,15 +52,15 @@ public class ThLetteraI extends Thread{
      */
     
     @Override
-    public void run() 
+    public synchronized void run() 
     {
         for(int i=0;i<frase.length();i++){
             if(frase.charAt(i)=='i'||frase.charAt(i)=='I')
                 //testo.setText(testo.getText()+"i");      
-                var.getSem().acquireUninterruptibly();
+                //var.getSem().acquireUninterruptibly();
                 var.addEl('i');
                 System.out.println(var.getCoda());
-                var.getSem().release();
+                //var.getSem().release();
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
